@@ -11,6 +11,7 @@ import {
   Platform,
   ViewPropTypes,
   I18nManager,
+  ScrollView,
 } from 'react-native';
 import Ripple from 'react-native-material-ripple';
 import { TextField } from 'react-native-material-textfield';
@@ -744,7 +745,7 @@ export default class Dropdown extends PureComponent {
             onStartShouldSetResponder={() => true}
             onResponderRelease={this.blur}
           >
-            <View
+            <ScrollView
               style={[styles.picker, pickerStyle, pickerStyleOverrides]}
               onStartShouldSetResponder={() => true}
             >
@@ -757,7 +758,7 @@ export default class Dropdown extends PureComponent {
                 scrollEnabled={visibleItemCount < itemCount}
                 contentContainerStyle={styles.scrollContainer}
               />
-            </View>
+            </ScrollView>
           </Animated.View>
         </Modal>
       </View>
